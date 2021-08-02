@@ -1,0 +1,12 @@
+.tabs {
+  background-color: lightgreen;
+  color: white;
+  border: none;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.tabs:hover {
+  background-color: green;
+}

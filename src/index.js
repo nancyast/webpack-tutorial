@@ -6,8 +6,6 @@ import './style.css';
 const button = document.querySelector('button')
 button.classList.add('tabs')
 
-// console.log('Image', Image)
-
 helloWorld();
 
 const img = document.createElement('img');

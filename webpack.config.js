@@ -32,6 +32,10 @@ module.exports = {
             plugins: ['@babel/plugin-proposal-class-properties']
           }
         }
+      },
+      {
+        test: /\.hbs$/,
+        use: ['handlebars-loader']
       }
     ]
   },
@@ -42,7 +46,11 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: 'body',
-      title: 'Webpack tutorial'
+      title: 'Webpack tutorial',
+      meta: {
+        desc: "some description"
+      },
+      template: 'src/index.hbs'
     })
   ]
 }

@@ -16,11 +16,14 @@
     "@babel/preset-env": "^7.14.8",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
+    "handlebars-loader": "^1.7.1",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.1.0",
     "style-loader": "^3.2.1",
     "webpack": "^5.47.1",
     "webpack-cli": "^4.7.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "handlebars": "^4.7.7"
+  }
 }

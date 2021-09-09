@@ -4,9 +4,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: {
+    'hello-world': './src/hello-world.js',
+    'kiwi': './src/kiwi.js'
+  },
   output: {
-    filename: 'bundle.[contenthash].js',
+    filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, './dist'),
     publicPath: '',
     clean: true,
@@ -42,15 +45,29 @@ module.exports = {
   plugins: [
     new TerserPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css'
+      filename: '[name].[contenthash].css'
     }),
     new HtmlWebpackPlugin({
       inject: 'body',
-      title: 'Webpack tutorial',
+      filename: 'hello-world.html',
+      chunks: ['hello-world'],
+      title: 'Hello world',
       meta: {
-        desc: "some description"
+        desc: "Hello world"
       },
-      template: 'src/index.hbs'
+      template: 'src/index.hbs',
+      minify: false
+    }),
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      filename: 'kiwi.html',
+      chunks: ['kiwi'],
+      title: 'Kiwi page',
+      meta: {
+        desc: "Kiwi page"
+      },
+      template: 'src/index.hbs',
+      minify: false
     })
   ]
 }

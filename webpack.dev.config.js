@@ -10,6 +10,17 @@ module.exports = {
     clean: true,
   },
   mode: 'development',
+  devServer: {
+    port: 9000,
+    hot: true,
+    static: {
+      directory: path.resolve(__dirname, './dist'),
+    },
+    devMiddleware: {
+      index: './index.html',
+      writeToDisk: true,
+    }
+  },
   module: {
     rules: [
       {
